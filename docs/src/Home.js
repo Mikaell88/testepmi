@@ -3,6 +3,7 @@ import './Home.css';
 
 function Home() {
   const [role, setRole] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   // Função para capturar os dados do formulário
   const handleSubmit = (e) => {
@@ -14,7 +15,19 @@ function Home() {
       password: document.getElementById('password').value,
       role: role
     };
-    console.log(formData); // Aqui você poderia enviar os dados para uma API
+
+    // Aqui você poderia enviar os dados para uma API
+    console.log(formData);
+    
+    // Atualizar a mensagem de sucesso
+    setSuccessMessage('Cadastro realizado com sucesso!');
+
+    // Limpar os campos do formulário e o estado do papel
+    document.getElementById('name').value = '';
+    document.getElementById('cpf').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('password').value = '';
+    setRole('');
   };
 
   // Função para alterar o estado da função (Pet Walker ou Tutor)
@@ -24,8 +37,6 @@ function Home() {
 
   return (
     <div className="Home">
-      
-
       <div className="form-container">
         <h2>Cadastro</h2>
 
@@ -65,9 +76,13 @@ function Home() {
 
           <button type="submit" className="submit-button">Cadastrar</button>
         </form>
+
+        {/* Exibe a mensagem de sucesso se existir */}
+        {successMessage && <p className="success-message">{successMessage}</p>}
       </div>
     </div>
   );
 }
 
 export default Home;
+

@@ -15,10 +15,10 @@ function Navbar() {
       <Link to="/main">Página Principal</Link>
     </button>
     <button className="nav-button">
-      <Link to="/about">About</Link>
+      <Link to="/about">Conecte-se</Link>
     </button>
     <button className="nav-button">
-      <Link to="/home">Home</Link>
+      <Link to="/home">Cadastro</Link>
     </button>
    
   </nav>
